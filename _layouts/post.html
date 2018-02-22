@@ -51,7 +51,7 @@ class: 'post-template'
 
         <section class="post-content">
 
-            {{ content }}
+            {{ content | toc }}
 
         </section>
 
@@ -100,6 +100,25 @@ class: 'post-template'
                     </section>
                 {% endif %}
             {% endfor %}
+
+            <div id="gitalk-container"></div>
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+            <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+            <script>
+             const gitalk = new Gitalk({
+               clientID: 'ab26ff3de0e57d29283f',
+               clientSecret: '64580913d595335252d29d5da371fe2ba7f6afbb',
+               repo: 'blog-comments',
+               owner: 'fatduo',
+               admin: ['fatduo'],
+               // labels: ['Gitalk', 'gitment'].concat(["{{ page.tags | join: '","'}}"]),
+               // id: location.origin + location.pathname,
+               id: "{{ page.url | prepend: site.host_url }}",
+               // facebook-like distraction free mode
+               distractionFreeMode: false
+             });
+             gitalk.render('gitalk-container')
+            </script>
 
             <!-- Add Disqus Comments -->
             {% if page.disqus %}

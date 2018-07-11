@@ -1,12 +1,6 @@
 ---
 ---
 
-// .section-nav.fixed {
-//     position: fixed;
-//     top: 20px;
-//     right: -10%;
-// }
-
 .section-nav {
   // transform: translateX(-120%);
   float: right;
@@ -59,20 +53,6 @@
   @media only screen and (max-width: 1450px) {
       display: none;
   }
-}
-
-//.markdown-toc-relative {
-//  position: fixed;
-//  bottom: 50%;
-//}
-
-.markdown-toc-relative {
-  // position: absolute;
-}
-
-.markdown-toc-fixed {
-  //position: fixed;
-  //top: 20px;
 }
 
 .toc-entry.toc-h1,

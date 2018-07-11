@@ -111,11 +111,7 @@ class: 'post-template'
                repo: 'blog-comments',
                owner: 'fatduo',
                admin: ['fatduo'],
-               // labels: ['Gitalk', 'gitment'].concat(["{{ page.tags | join: '","'}}"]),
-               // id: location.origin + location.pathname,
-               id: "{{ page.url | prepend: site.host_url }}",
-               // facebook-like distraction free mode
-               distractionFreeMode: false
+               id: "{{ page.url | prepend: site.host_url }}"
              });
              gitalk.render('gitalk-container')
             </script>
